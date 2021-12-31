@@ -1,0 +1,52 @@
+body{
+      background: #9776;
+}
+    .row.content {
+  		height: 400px;    
+  	}
+  
+    a{
+      color: blue;
+      text-decoration: none;
+    }
+  	.side {
+      margin-top: 8%;
+      padding: 50px 10px;
+      width: 40%;  	 
+      position: fixed;      
+  	  height: 100%;   
+      overflow: auto;
+      color: #fff;
+      
+      background-image: url("img/image 3.jpg");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;     
+  	}
+.side h2 {
+    }
+    
+    .side p {
+        font-size: 20px;
+        
+    }
+    .maincontent{
+      color: black;
+        margin-top: 8%;
+        margin-left: 35%;
+        padding-top: 5%;
+        padding-bottom: 9%;
+        background: url(img/123.jpg);
+        background-repeat: no-repeat; 
+        background-size: 100%;
+        text-shadow: 0 0 3px white;
+    }   
+     /* On small screens, set height to 'auto' for sidenav and grid */
+    
+    @media screen and (max-width: 700px) {
+      .side {
+        height: auto;
+        width: 100%;
+        position: relative;
+        padding: 5px;
+      }

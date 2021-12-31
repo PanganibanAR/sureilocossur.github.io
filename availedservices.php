@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sure Ilocos Sur</title>
+  <!---Menyisipkan Javascript--->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <!--- Menyisikpan Javascript--->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<!--javascripts-->
+  <script src="validation.js"></script>
+  <script src="sidenav.js"></script>
+<!--css-->
+<link rel="stylesheet" type="text/css" href="sidenav.css">
+<link rel="stylesheet" type="text/css" href="content1.css">
+<link rel="stylesheet" type="text/css" href="footer.css">
+<link rel="stylesheet" type="text/css" href="style.css"/>
+
+  <link rel="stylesheet" href="jquery-ui-1.13.0/jquery-ui.css">
+  <script src="jquery-3.6.0.js"></script>
+  <script src="jquery-ui-1.13.0/jquery-ui.js"></script>
+
+<script>
+  $( function() {
+    $( "#jQuery_accordion").accordion({heightStyle:'content', header:'h2'});
+  });
+  </script>  
+
+</head>
+<body>
+  <!--toggle navigation-->
+<nav class="navbar navbar-expand-md navbar-light fixed-top" style="background-color: #e3f2fd;">
+    <a class="navbar-brand" href="#"> <div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+ <a href="about.html">About</a>
+  <a href="services.html">Services</a>
+  <a href="https://geographic.org/streetview/philippines/region_1/ilocos_sur.html"  target="_blank">Municipalities</a>
+  <a href="adminLogin.php">Admin</a>
+  <a href="feedback.php">Feedback</a>
+  </div><!--sidenav-->
+<div id="main">
+     <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Sure Sur</span>
+    </div><!--main--> </a>
+    
+    </button> 
+    <div class="collapse navbar-collapse"></div>
+  <div class="btn-group">
+     <a href="admin.php"><button type="button" class="btn btn-dark">
+  Home</button></a>
+    <button type="button" class="btn btn-dark dropdown-toggle" data-toggle="dropdown">
+       Registered User
+    </button>
+    <div class="dropdown-menu">
+      <a class="dropdown-item" href="adminresidents.php">Resident</a>
+      <a class="dropdown-item" href="adminvisitors.php">Visitor</a>
+    </div>
+
+  <a href="availedservices.php"><button type="button" class="btn btn-dark">Availed Services</button>
+    </div></a>
+     <a href="home.html"><button type="button" class="btn btn-dark">Exit</button>
+    </div></a>
+      </nav>  <!--toggle navigation-->
+
+</div>
+
+<div class="container-fluid" style="margin-top: 10%;">
+ <h1 align="center">VISITORS DATA</h1>
+ 
+  <table>
+      <tr>
+        <th>Name</th>
+        <th>Address</th>
+        <th>Contact No.</th>
+        <th>Van</th>
+        <th>Car</th>
+        <th>Jeep</th>
+        <th>Bus</th>
+        <th>Motorcycle</th>
+        <th>Days</th>
+        <th>Destination</th>
+        <th>Date of use</th>
+        <th>Drivers</th>
+      </tr>
+      <?php  
+        include "myconnection.php";
+
+        $query = "SELECT * FROM services";
+        $result = mysqli_query($connect, $query);
+
+        iF(mysqli_num_rows($result) > 0){
+          while($row = mysqli_fetch_array($result)){
+      ?>
+      <tr>
+        <td> <?php echo $row["Name"];?></td>
+        <td> <?php echo $row["Address"];?></td>
+        <td> <?php echo $row["Contact_No"];?></td>
+        <td> <?php echo $row["Van"];?></td>
+        <td> <?php echo $row["Car"];?></td>
+        <td> <?php echo $row["Jeep"];?></td>
+        <td> <?php echo $row["Bus"];?></td>
+        <td> <?php echo $row["Motorcycle"];?></td>
+        <td> <?php echo $row["Days"];?></td>
+        <td> <?php echo $row["Destination"];?></td>
+        <td> <?php echo $row["Date_of_use"];?></td>
+        <td> <?php echo $row["Drivers"];?></td>
+      </tr>
+      <?php
+          }
+        }
+        else{
+          echo "0 results";
+        }
+      ?>
+    </table>
+
+
+
+
+<div>
+</div>
+
+</body>
+</html>
+
+

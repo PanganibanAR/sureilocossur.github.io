@@ -1,0 +1,17 @@
+body{
+   background: #9776;
+}
+.img{
+	float: left;
+	width: 350px;
+	padding: 10px;
+}
+.jumbotron{
+	background: url(img/is2.jpg);
+	color: white;
+}
+a.link{
+	color: White;
+	padding-left: 1%;
+	text-align: center;
+}
